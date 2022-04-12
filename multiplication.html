@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Set Operation</title>
+</head>
+  <script>
+  function multiply() {
+    t=" ";
+    var v1 = parseInt(block.value)
+    var v2 = parseInt(line.value)
+    var v3 = parseInt(start.value)
+    v1 += v3;
+    v1 ++;
+    t+='<table broder=1 style="background-color:white;"><tr>'
+    var i=v3
+    while (i<=v1){
+     i++
+  //  }
+    // t+='<table border=1 style="background-color:white;"><tr>'
+      // for (let i=v3; i<=v1; i++) {
+       t += '<td>' + i + 'Times';
+        t +='<table  border=1 style="color:black;">'
+          var j = 1
+          while(j<=v2){
+            j++
+            // for (let j = 1; j <= v2; j++) {
+              let ans= eval(i+select.value+j)
+               t +='<tr><td>' + i+ select.value+j + '=' + ans +'</td></tr>'
+             }
+            t+='</table></td>'
+    }
+      '</tr></table>'
+      tolu.innerHTML = t
+    }
+</script> 
+<body style="background-color:blue;color:black; font-size:1.5em;"> 
+     <center>  
+        <input type="number" id="block" placeholder="block" style="text-align:center;">
+        <input type="number" id="line" placeholder="line" style="text-align:center;">
+        <select name="" id="select">
+          <option value="">Select A set of Operation</option>
+          <option value="*">Multiplication</option>
+          <option value="-">Subtraction</option>
+          <option value="+">Addition</option>
+          <option value="/">Division</option>
+        </select>
+        <button onclick="multiply()">Generate</button> 
+        <div id="tolu">
+        </div>
+        <input type="number" id="start" placeholder="start from" > 
+      
+    </center> 
+</body>
+</html>
